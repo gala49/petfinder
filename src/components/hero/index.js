@@ -1,7 +1,8 @@
 import React from 'react';
+import { Navigate, useParams } from 'react-router-dom';
 
 const Hero = ({ image, displayText }) => {
-  const type = ''
+  const { type } = useParams();
 
   return (
     <div
@@ -13,7 +14,7 @@ const Hero = ({ image, displayText }) => {
           `,
         backgroundBlendMode: 'saturation',
         backgroundSize: 'cover',
-        backgroundColor: '#0000008f'
+        backgroundColor: '#0000008f',
       }}
     >
       <h2>{displayText || getHeroTitle(type)}</h2>
