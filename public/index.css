@@ -3,6 +3,10 @@
   align-items: center;
   justify-content: space-between;
   background: white;
+  
+  > img{
+    cursor: pointer;
+  }
 }
 
 .nav-links {

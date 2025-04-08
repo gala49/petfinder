@@ -4,10 +4,11 @@ import Logo from '../../assets/logo.svg';
 import Search from '../search';
 
 // Import NavLink
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Navigation = () => {
   const [petTypes, setPetTypes] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function getPetTypesData() {
@@ -18,10 +19,14 @@ const Navigation = () => {
     getPetTypesData();
   }, []);
 
+  const handleClick = () => {
+    return navigate('/');
+  };
+
   return (
     <nav>
       <div className="nav-logo">
-        <img src={Logo} alt="Petlover" />
+        <img src={Logo} alt="Petlover" onClick={handleClick}/>
         <Search />
       </div>
       <ul className="nav-links">
